@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo '- Upgrade all packages (if needed):'
 apt update && apt dist-upgrade && apt autoremove && apt autoclean
 echo '- Upgrade completed'
