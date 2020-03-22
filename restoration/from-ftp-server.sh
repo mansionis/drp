@@ -44,7 +44,7 @@ echo '- Disable the swap'
 swapoff -a
 systemctl mask swapfile.swap
 rm /swapfile
-sed -i.bak -r 's/(.+ swap .+)/#\1/' /etc/fstab
+sed -E -i.bak -r 's/(.+ swap .+)/#\1/' /etc/fstab
 echo ''
 
 echo '- Disable IPv6'
@@ -52,6 +52,6 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
 sysctl -w net.ipv6.conf.lo.disable_ipv6=1
 sysctl -w net.ipv6.conf.enp1s0.disable_ipv6=1
-sed -i -e 's/GRUB_CMDLINE_LINUX="(.*)"/GRUB_CMDLINE_LINUX="\1 ipv6.disable=1"/' /etc/default/grub
-sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT="(.*)"/GRUB_CMDLINE_LINUX_DEFAULT="\1 ipv6.disable=1"/' /etc/default/grub
+sed -i -E 's/GRUB_CMDLINE_LINUX="(.*)"/GRUB_CMDLINE_LINUX="\1 ipv6.disable=1"/' /etc/default/grub
+sed -i -E 's/GRUB_CMDLINE_LINUX_DEFAULT="(.*)"/GRUB_CMDLINE_LINUX_DEFAULT="\1 ipv6.disable=1"/' /etc/default/grub
 update-grub
