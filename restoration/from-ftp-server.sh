@@ -3,7 +3,7 @@ apt update && apt dist-upgrade && apt autoremove && apt autoclean
 echo '- Upgrade completed'
 echo ''
 echo '- Install prerequisites packages:'
-apt install -y "${APT_PACKAGES[@]}"
+apt install -y $APT_PACKAGES
 echo '- Prerequisites installed'
 echo ''
 echo '- Install Veracrypt:'
