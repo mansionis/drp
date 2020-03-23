@@ -10,7 +10,7 @@ echo '- Prerequisites installed'
 echo ''
 echo '- Install Veracrypt:'
 rm veracrypt-console-1.24-Update4-Ubuntu-18.04-amd64.deb
-wget 'https://launchpad.net/veracrypt/trunk/1.24-update4/+download/veracrypt-console-1.24-Update4-Ubuntu-18.04-amd64.deb' && dpkg -i veracrypt-console-1.24-Update4-Ubuntu-18.04-amd64.deb
+wget -O /tmp/veracrypt-console-1.24-Update4-Ubuntu-18.04-amd64.deb 'https://launchpad.net/veracrypt/trunk/1.24-update4/+download/veracrypt-console-1.24-Update4-Ubuntu-18.04-amd64.deb' && dpkg -i /tmp/veracrypt-console-1.24-Update4-Ubuntu-18.04-amd64.deb
 echo ''
 
 echo '- Looking for the latest backup done:'
